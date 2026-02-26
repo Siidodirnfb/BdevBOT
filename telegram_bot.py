@@ -142,6 +142,10 @@ def handle_public_commands(message):
 def handle_private_messages(message):
     bot.reply_to(message, "Personal messages mode is not yet implemented.")
 
+@bot.message_handler(func=lambda message: message.text and message.text.strip() == '67')
+def handle_specific_number(message):
+    bot.reply_to(message, "Иди нахуй")
+
 # --- Telethon и системная часть ---
 
 channel_messages = []
